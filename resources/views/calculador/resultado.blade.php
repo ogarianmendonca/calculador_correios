@@ -33,7 +33,7 @@
             </table>
 
             <div class="text-right">
-                <a class="btn btn-primary" href="{{ url('calculador/index') }}">Nova Consulta</a>
+                <a class="btn btn-primary" href="{{ url('/') }}">Nova Consulta</a>
             </div>
         </div>
     </div>

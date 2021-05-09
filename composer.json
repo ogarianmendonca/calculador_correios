@@ -15,7 +15,9 @@
         "laravel/framework": "^7.29",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^2.4",
-        "robrichards/xmlseclibs": "^3.1"
+        "robrichards/xmlseclibs": "^3.1",
+        "ext-curl": "*",
+        "ext-simplexml": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

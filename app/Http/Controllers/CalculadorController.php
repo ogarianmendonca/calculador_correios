@@ -34,6 +34,26 @@ class CalculadorController extends Controller
      */
     public function calcPrecoPrazo(Request $request)
     {
+        $result = $this->usingCurl($request);
+        $xml = simplexml_load_string($result);
+
+        return view('calculador.resultado', ['resultado' => $xml->cServico]);
+    }
+
+    /**
+     * @return Application|Factory|View
+     */
+    public function resultado()
+    {
+        return view('calculador.resultado');
+    }
+
+    /**
+     * @param $request
+     * @return mixed
+     */
+    private function usingSoapClient($request)
+    {
         $params = array(
             'nCdEmpresa'          => $request->get('nCdEmpresa'),           // String
             'sDsSenha'            => $request->get('sDsSenha'),             // String
@@ -58,16 +78,50 @@ class CalculadorController extends Controller
         );
 
         $response = $client->__soapCall("CalcPrecoPrazo", array($params));
-        $resultado = $response->CalcPrecoPrazoResult->Servicos->cServico;
+        $result = $response->CalcPrecoPrazoResult->Servicos->cServico;
 
-        return view('calculador.resultado', ['resultado' => $resultado]);
+        return $result;
     }
 
     /**
-     * @return Application|Factory|View
+     * @param $request
+     * @return bool|string
      */
-    public function resultado()
+    private function usingCurl($request)
     {
-        return view('calculador.resultado');
+        $stringUrl = "nCdEmpresa=" . $request->get('nCdEmpresa') .
+                    "&sDsSenha=" . $request->get('sDsSenha') .
+                    "&nCdServico=" . $request->get('nCdServico') .
+                    "&sCepOrigem=" . $request->get('sCepOrigem') .
+                    "&sCepDestino=" . $request->get('sCepDestino') .
+                    "&nVlPeso=" . $request->get('nVlPeso') .
+                    "&nCdFormato=" . (int)$request->get('nCdFormato') .
+                    "&nVlComprimento=" . (float)$request->get('nVlComprimento') .
+                    "&nVlAltura=" . (float)$request->get('nVlAltura') .
+                    "&nVlLargura=" . (float)$request->get('nVlLargura') .
+                    "&nVlDiametro=" . (float)$request->get('nVlDiametro') .
+                    "&sCdMaoPropria=" . $request->get('sCdMaoPropria') .
+                    "&nVlValorDeclarado=" . (float)$request->get('nVlValorDeclarado') .
+                    "&sCdAvisoRecebimento=" . $request->get('sCdAvisoRecebimento') .
+                    "&StrRetorno=xml" .
+                    "&nIndicaCalculo=3";
+
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'http://ws.correios.com.br/calculador/CalcPrecoPrazo.aspx?' . $stringUrl,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+        ));
+
+        $response = curl_exec($curl);
+        curl_close($curl);
+
+        return $response;
     }
 }
