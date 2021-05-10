@@ -15,7 +15,7 @@
                                 Código Empresa
                                 <button type="button"
                                         class="btn btn-lg btn-danger btn-circle"
-                                        data-toggle="popover"
+                                        data-toggle="popover" data-placement="top"
                                         data-content="Para clientes sem contrato informar o parâmetro vazio.">
                                     <i class="fas fa-info"></i>
                                 </button>
@@ -28,7 +28,7 @@
                                 Cep Origem
                                 <button type="button"
                                         class="btn btn-lg btn-danger btn-circle"
-                                        data-toggle="popover"
+                                        data-toggle="popover" data-placement="top"
                                         data-content="CEP de Origem sem hífen.Exemplo: 05311900">
                                     <i class="fas fa-info"></i>
                                 </button>
@@ -41,7 +41,7 @@
                                 Código Serviço
                                 <button type="button"
                                         class="btn btn-lg btn-danger btn-circle"
-                                        data-toggle="popover"
+                                        data-toggle="popover" data-placement="top"
                                         data-content="Para clientes com contrato: Consultar os códigos no seu contrato.
                                         (04014 SEDEX à vista; 04510 PAC à vista; 04782 SEDEX 12 ( à vista);
                                         04790 SEDEX 10 (à vista); 04804 SEDEX Hoje à vista)">
@@ -58,7 +58,7 @@
                                 Senha
                                 <button type="button"
                                         class="btn btn-lg btn-danger btn-circle"
-                                        data-toggle="popover"
+                                        data-toggle="popover" data-placement="top"
                                         data-content="Para clientes sem contrato informar o parâmetro vazio.">
                                     <i class="fas fa-info"></i>
                                 </button>
@@ -71,7 +71,7 @@
                                 Cep Destino
                                 <button type="button"
                                         class="btn btn-lg btn-danger btn-circle"
-                                        data-toggle="popover"
+                                        data-toggle="popover" data-placement="top"
                                         data-content="CEP de Destino sem hífen.Exemplo: 05311900">
                                     <i class="fas fa-info"></i>
                                 </button>
@@ -84,7 +84,7 @@
                                 Peso da encomenda
                                 <button type="button"
                                         class="btn btn-lg btn-danger btn-circle"
-                                        data-toggle="popover"
+                                        data-toggle="popover" data-placement="top"
                                         data-content="Peso da encomenda, incluindo sua embalagem. O
                                         peso deve ser informado em quilogramas. Se o
                                         formato for Envelope, o valor máximo permitido será 1
@@ -156,7 +156,7 @@
                                 Encomenda será entregue com o serviço adicional valor declarado?
                                 <button type="button"
                                         class="btn btn-lg btn-danger btn-circle"
-                                        data-toggle="popover"
+                                        data-toggle="popover" data-placement="top"
                                         data-content="Neste campo deve ser
                                         apresentado o valor declarado desejado, em Reais. Se não optar pelo
                                         serviço informar zero.">
