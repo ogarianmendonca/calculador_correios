@@ -34,6 +34,8 @@ class CalculadorController extends Controller
      */
     public function calcPrecoPrazo(Request $request)
     {
+        $this->validaFormulario($request);
+
         $result = $this->usingCurl($request);
         $xml = simplexml_load_string($result);
 
@@ -49,6 +51,8 @@ class CalculadorController extends Controller
     }
 
     /**
+     * TODO: O USO COM O SOAPCLIENT A RESPOSTA ESTÁ DEMORANDO MUITO!
+     *
      * @param $request
      * @return mixed
      */
@@ -123,5 +127,46 @@ class CalculadorController extends Controller
         curl_close($curl);
 
         return $response;
+    }
+
+    private function validaFormulario(Request $request)
+    {
+        $request->validate(
+            [
+                'nCdEmpresa'          => 'required',
+                'sDsSenha'            => 'required',
+                'nCdServico'          => 'required',
+                'sCepOrigem'          => 'required',
+                'sCepDestino'         => 'required',
+                'nVlPeso'             => 'required',
+                'nCdFormato'          => 'required',
+                'nVlComprimento'      => 'required',
+                'nVlAltura'           => 'required',
+                'nVlLargura'          => 'required',
+                //'nVlDiametro'         => 'required',
+                'sCdMaoPropria'       => 'required',
+                'nVlValorDeclarado'   => 'required',
+                'sCdAvisoRecebimento' => 'required',
+            ],
+            [
+                'required' => 'O campo :attribute é obrigatório',
+            ],
+            [
+                'nCdEmpresa'          => 'Código Empresa',
+                'sDsSenha'            => 'Senha',
+                'nCdServico'          => 'Código Serviço',
+                'sCepOrigem'          => 'Cep Origem',
+                'sCepDestino'         => 'Cep Destino',
+                'nVlPeso'             => 'Peso da Encomenda',
+                'nCdFormato'          => 'Formado da Encomenda',
+                'nVlComprimento'      => 'Comprimento',
+                'nVlAltura'           => 'Altura',
+                'nVlLargura'          => 'Largura',
+                //'nVlDiametro'         => 'required',
+                'sCdMaoPropria'       => 'Mão Própria',
+                'nVlValorDeclarado'   => 'Valor Declarado (Se não optar pelo serviço informar ZERO)',
+                'sCdAvisoRecebimento' => 'Aviso Recebimento',
+            ]
+        );
     }
 }

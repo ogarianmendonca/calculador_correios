@@ -13,21 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('calculador.index');
-});
+Route::get('/', 'HomeController@index');
 
 Route::get(
-    '/',
+    'calculador/index',
     'CalculadorController@index'
 )->name('calculador.index');
 
 Route::post(
-    'calc-preco-prazo',
+    'calculador/calc-preco-prazo',
     'CalculadorController@calcPrecoPrazo'
 )->name('calculador.calc-preco-prazo');
 
 Route::get(
-    'resultado',
+    'calculador/resultado',
     'CalculadorController@resultado'
 )->name('calculador.resultado');

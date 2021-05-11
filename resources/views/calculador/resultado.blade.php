@@ -1,6 +1,9 @@
-@extends('welcome')
+@extends('index')
 
 @section('content')
+    <div class="text-center">
+        <h2>Resultado</h2>
+    </div>
     <div class="card">
         <div class="card-body">
             <table class="table table-hover">
@@ -33,7 +36,7 @@
             </table>
 
             <div class="text-right">
-                <a class="btn btn-primary" href="{{ url('/') }}">Nova Consulta</a>
+                <a class="btn btn-primary" href="{{ url('calculador/index') }}">Nova Consulta</a>
             </div>
         </div>
     </div>
