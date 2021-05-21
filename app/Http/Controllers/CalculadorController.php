@@ -93,8 +93,11 @@ class CalculadorController extends Controller
      */
     private function usingCurl($request)
     {
-        $stringUrl = "nCdEmpresa=" . $request->get('nCdEmpresa') .
-                    "&sDsSenha=" . $request->get('sDsSenha') .
+//        "nCdEmpresa=" . $request->get('nCdEmpresa') .
+//        "&sDsSenha=" . $request->get('sDsSenha') .
+//        "&nVlDiametro=" . (float)$request->get('nVlDiametro') .
+
+        $stringUrl =
                     "&nCdServico=" . $request->get('nCdServico') .
                     "&sCepOrigem=" . $request->get('sCepOrigem') .
                     "&sCepDestino=" . $request->get('sCepDestino') .
@@ -103,7 +106,6 @@ class CalculadorController extends Controller
                     "&nVlComprimento=" . (float)$request->get('nVlComprimento') .
                     "&nVlAltura=" . (float)$request->get('nVlAltura') .
                     "&nVlLargura=" . (float)$request->get('nVlLargura') .
-                    "&nVlDiametro=" . (float)$request->get('nVlDiametro') .
                     "&sCdMaoPropria=" . $request->get('sCdMaoPropria') .
                     "&nVlValorDeclarado=" . (float)$request->get('nVlValorDeclarado') .
                     "&sCdAvisoRecebimento=" . $request->get('sCdAvisoRecebimento') .
@@ -133,8 +135,8 @@ class CalculadorController extends Controller
     {
         $request->validate(
             [
-                'nCdEmpresa'          => 'required',
-                'sDsSenha'            => 'required',
+                //'nCdEmpresa'          => 'required',
+                //'sDsSenha'            => 'required',
                 'nCdServico'          => 'required',
                 'sCepOrigem'          => 'required',
                 'sCepDestino'         => 'required',
@@ -152,8 +154,8 @@ class CalculadorController extends Controller
                 'required' => 'O campo :attribute é obrigatório',
             ],
             [
-                'nCdEmpresa'          => 'Código Empresa',
-                'sDsSenha'            => 'Senha',
+                //'nCdEmpresa'          => 'Código Empresa',
+                //'sDsSenha'            => 'Senha',
                 'nCdServico'          => 'Código Serviço',
                 'sCepOrigem'          => 'Cep Origem',
                 'sCepDestino'         => 'Cep Destino',

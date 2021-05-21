@@ -22,26 +22,26 @@
 
                 <div class="row">
                     <div class="col-6">
-                        <div class="row">
-                            <div class="col-10">
-                                <div class="form-group">
-                                    <label for="nCdEmpresa">
-                                        Código Empresa <span class="text-danger">*</span>
-                                    </label>
-                                    <input type="text" class="form-control" id="nCdEmpresa" name="nCdEmpresa">
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <a tabindex="0"
-                                   class="btn-circle"
-                                   role="button"
-                                   data-toggle="popover"
-                                   data-trigger="focus"
-                                   data-content="Obrigatório informar o Código Empresa.">
-                                    <span class="material-icons">info</span>
-                                </a>
-                            </div>
-                        </div>
+{{--                        <div class="row">--}}
+{{--                            <div class="col-10">--}}
+{{--                                <div class="form-group">--}}
+{{--                                    <label for="nCdEmpresa">--}}
+{{--                                        Código Empresa <span class="text-danger">*</span>--}}
+{{--                                    </label>--}}
+{{--                                    <input type="text" class="form-control" id="nCdEmpresa" name="nCdEmpresa">--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="col-2">--}}
+{{--                                <a tabindex="0"--}}
+{{--                                   class="btn-circle"--}}
+{{--                                   role="button"--}}
+{{--                                   data-toggle="popover"--}}
+{{--                                   data-trigger="focus"--}}
+{{--                                   data-content="Obrigatório informar o Código Empresa.">--}}
+{{--                                    <span class="material-icons">info</span>--}}
+{{--                                </a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
                         <div class="row">
                             <div class="col-10">
@@ -89,26 +89,26 @@
                     </div>
 
                     <div class="col-6">
-                        <div class="row">
-                            <div class="col-10">
-                                <div class="form-group">
-                                    <label for="sDsSenha">
-                                        Senha <span class="text-danger">*</span>
-                                    </label>
-                                    <input type="password" class="form-control" id="sDsSenha" name="sDsSenha">
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <a tabindex="0"
-                                   class="btn-circle"
-                                   role="button"
-                                   data-toggle="popover"
-                                   data-trigger="focus"
-                                   data-content="Obrigatório informar a Senha">
-                                    <span class="material-icons">info</span>
-                                </a>
-                            </div>
-                        </div>
+{{--                        <div class="row">--}}
+{{--                            <div class="col-10">--}}
+{{--                                <div class="form-group">--}}
+{{--                                    <label for="sDsSenha">--}}
+{{--                                        Senha <span class="text-danger">*</span>--}}
+{{--                                    </label>--}}
+{{--                                    <input type="password" class="form-control" id="sDsSenha" name="sDsSenha">--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="col-2">--}}
+{{--                                <a tabindex="0"--}}
+{{--                                   class="btn-circle"--}}
+{{--                                   role="button"--}}
+{{--                                   data-toggle="popover"--}}
+{{--                                   data-trigger="focus"--}}
+{{--                                   data-content="Obrigatório informar a Senha">--}}
+{{--                                    <span class="material-icons">info</span>--}}
+{{--                                </a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
                         <div class="row">
                             <div class="col-10">
@@ -171,27 +171,23 @@
                                 <option value="3">Envelope</option>
                             </select>
                         </div>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-6">
                         <div class="form-group">
                             <label for="nVlComprimento">
                                 Comprimento da encomenda <span class="text-danger">*</span>
                             </label>
                             <input type="text" class="form-control" id="nVlComprimento" name="nVlComprimento">
                         </div>
+                    </div>
 
+                    <div class="col-6" style="margin-top: 5px;">
                         <div class="form-group">
                             <label for="nVlAltura">
                                 Altura da encomenda <span class="text-danger">*</span>
                             </label>
                             <input type="text" class="form-control" id="nVlAltura" name="nVlAltura">
                         </div>
-                    </div>
 
-                    <div class="col-6">
                         <div class="form-group">
                             <label for="nVlLargura">
                                 Largura da encomenda <span class="text-danger">*</span>
@@ -199,12 +195,12 @@
                             <input type="text" class="form-control" id="nVlLargura" name="nVlLargura">
                         </div>
 
-                        <div class="form-group">
-                            <label for="nVlDiametro">
-                                Diâmetro da encomenda
-                            </label>
-                            <input type="text" class="form-control" id="nVlDiametro" name="nVlDiametro">
-                        </div>
+{{--                        <div class="form-group">--}}
+{{--                            <label for="nVlDiametro">--}}
+{{--                                Diâmetro da encomenda--}}
+{{--                            </label>--}}
+{{--                            <input type="text" class="form-control" id="nVlDiametro" name="nVlDiametro">--}}
+{{--                        </div>--}}
                     </div>
                 </div>
 
