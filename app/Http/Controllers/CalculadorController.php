@@ -82,9 +82,7 @@ class CalculadorController extends Controller
         );
 
         $response = $client->__soapCall("CalcPrecoPrazo", array($params));
-        $result = $response->CalcPrecoPrazoResult->Servicos->cServico;
-
-        return $result;
+        return $response->CalcPrecoPrazoResult->Servicos->cServico;
     }
 
     /**
